@@ -1,3 +1,5 @@
+'''The main file of the SFCS simulation suit. This file contains all test scenarios and handles computing mean run times and standard deviations for each scenario'''
+
 import time
 import math
 import matplotlib.pyplot as plt
@@ -6,8 +8,8 @@ from resource_storage import ResourceStorage
 from sfcs import ResourceAgent, BiddingManager, RecursiveResourceAgent
 from task import AssembleIronGearWheelTask, AssembleElectronicCircuitTask, AssembleCopperCableTask, AssembleAdvancedCircuitTask
 
-
 def run_test_0(save_fig):
+    '''Method to run test scenario 0. For more information about the scenario refer to the linked paper in the README.md'''
     resource_storage = ResourceStorage()
     resource_storage.resources = {
         'iron_plate': 200,
@@ -94,6 +96,7 @@ def run_test_0(save_fig):
 
 
 def run_test_1(save_fig):
+    '''Method to run test scenario 1. For more information about the scenario refer to the linked paper in the README.md'''
     resource_storage = ResourceStorage()
     resource_storage.resources = {
         'iron_plate': 40,
@@ -190,6 +193,7 @@ def run_test_1(save_fig):
 
 
 def run_test_2(save_fig):
+    '''Method to run test scenario 2. For more information about the scenario refer to the linked paper in the README.md'''
     resource_storage = ResourceStorage()
     resource_storage.resources = {
         'iron_plate': 40,
@@ -285,6 +289,7 @@ def run_test_2(save_fig):
 
 
 def run_test_3(save_fig):
+    '''Method to run test scenario 3. For more information about the scenario refer to the linked paper in the README.md'''
     resource_storage = ResourceStorage()
     resource_storage.resources = {
         'iron_plate': 40,
@@ -394,10 +399,12 @@ def run_test_3(save_fig):
 
 
 def main():
-    num_runs = 30
+    '''Main method. Run this to perform simulations'''
+    num_runs = 30 # Change this to perform a different amount of iterations. Note that one iteration takes more than two minutes
 
     total_time_test = [[], [], [], []]
 
+    # Testing each scenario in num_runs iterations and collecting the times to achieve a predefined manufacturing goal
     for i in range(num_runs):
         print("----")
         print("Test Iteration", i)
@@ -407,6 +414,7 @@ def main():
         total_time_test[3].append(run_test_3(i == 0))
         print("----")
 
+    # Calculating the mean time and standard deviation for each test scenario
     for i in range(4):
         mean = 0.0
 

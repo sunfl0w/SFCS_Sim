@@ -1,6 +1,6 @@
 ## Developing a holonic shop floor control system using MANPro for agent-to-agent communications
 
-This repository is part of the soon to be released paper named "Developing a holonic shop floor control system using MANPro for agent-to-agent communications".
+This repository is part of the soon to be released paper named "Developing a holonic shop floor control system using MANPro for agent-to-agent communications" which is part of a seminar held by the Intelligent Systems Group at the CAU in Kiel. The focus of the seminar is Industry 4.0 and organic computing.
 The code is made public under the MIT license. More information can be found the the repository's ```license``` file.
 
 ## Usage
